@@ -1,6 +1,5 @@
 fastapi==0.116.1
 GitPython==3.1.41
-GitPython==3.1.45
 google-genai==1.26.0
 loguru==0.7.3
 networkx==3.2.1
@@ -12,3 +11,4 @@ pydantic_settings==2.10.1
 python-dotenv==1.1.1
 pyvis==0.3.2
 radon==6.0.1
+uvicorn==0.30.6
