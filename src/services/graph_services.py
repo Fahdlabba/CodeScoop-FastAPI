@@ -1,7 +1,7 @@
 from pyvis.network import Network
-import os
 from typing import Set, Tuple
 import  networkx as nx
+import os
 
 class BuildGraph():
 
@@ -40,6 +40,7 @@ class BuildGraph():
     def delete_temp_file(self):
         try :
             os.remove("graph.html")
+            os.system("rm -rf lib")
         except Exception as e :
             print('Error : '+e)
 

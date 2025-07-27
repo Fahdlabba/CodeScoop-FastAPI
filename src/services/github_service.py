@@ -1,7 +1,4 @@
-from typing import List
-from git import Repo
-import tempfile
-import os 
+from git import Repo 
 
 class GitHubService:
     def __init__(self, repo_path: str):
