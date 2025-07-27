@@ -33,7 +33,7 @@ ascii_art = """
 """
 
 app.add_middleware(CORSMiddleware,
-    allowed_origins=[os.getenv("CORPS_ALLOWED")],
+    allow_origins=[os.getenv("CORPS_ALLOWED")],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
