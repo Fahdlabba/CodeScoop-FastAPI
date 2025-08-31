@@ -3,17 +3,21 @@ from fastapi import HTTPException
 from fastapi.responses import JSONResponse
 from src.services.llm.gemini import GeminiLLM
 from src.utils.file_managment import get_files
+from pydantic import BaseModel
 import os
 
+class CodeGraph(BaseModel):
+    graph: str
 
 router = APIRouter()
 
 @router.post("/suggestions")
-async def code_suggestions(graph: str):
+async def code_suggestions(code_graph: CodeGraph):
     """
     Generate code suggestions for the given code graph.
     """
     try:
+        graph = code_graph.graph
 
         if not os.path.exists("github"):
             return HTTPException(status_code=404, detail="Repository not found. Please upload the repository first.")
