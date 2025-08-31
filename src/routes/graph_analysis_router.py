@@ -26,11 +26,15 @@ async def analyze_graph():
             logger.info(f"Analyzing file: {file_path}")
             if not os.path.exists(file_path):
                 return HTTPException(status_code=404, detail=f"File {file_path} not found in the repository.")
+            if not file_path.endswith(".py"):
+                continue
             with open(file_path, 'r') as f:
                 content = f.read()
             
             ast_tree = ExtractorFunctionsRelation("TemporaryRepo")
             ast_tree.visit(ast.parse(content))
+
+            logger.info(f"Extracted edges: {ast_tree.edges}")
 
             graph_service = BuildGraph(ast_tree.edges)
             graph_service.build_graph()
@@ -44,5 +48,6 @@ async def analyze_graph():
         return  JSONResponse(content={"html_content": html_content})
 
     except Exception as e:
+        logger.error(f"Error analyzing graph: {str(e)}")
         return JSONResponse(status_code=500, content={"error": str(e)})
 
