@@ -7,7 +7,7 @@ def get_files()-> List[str]:
 
         for root,_,files in os.walk("github") : 
             for file in files : 
-                if file.endswith(".py") or file.endswith(".txt"):
+                if file.endswith(".py") or file.endswith(".ipynb") or file.endswith(".txt"):
                     file_path:str=os.path.join(root,file)
                     module_name = os.path.dirname(file_path) or 'root'  
                     if module_name not in modules:

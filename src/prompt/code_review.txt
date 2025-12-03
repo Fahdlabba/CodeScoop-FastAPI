@@ -11,12 +11,12 @@ You will receive:
 
 Use all available data (code, call graph, runtime execution) to deliver a context-aware, performance-sensitive, and maintainability-focused review:
 
-- ✅ Validate correctness and expected behavior through virtual execution.
-- ✅ Analyze readability, logic clarity, and naming consistency.
-- ✅ Leverage the call graph to assess modularity, function reuse, and coupling.
-- ✅ Detect potential bugs, unused code, or inefficient patterns.
-- ✅ Surface performance bottlenecks or runtime anomalies (inferred via simulated execution).
-- ✅ Suggest improvements for structure, testing, and scalability.
+- Validate correctness and expected behavior through virtual execution.
+- Analyze readability, logic clarity, and naming consistency.
+- Leverage the call graph to assess modularity, function reuse, and coupling.
+- Detect potential bugs, unused code, or inefficient patterns.
+- Surface performance bottlenecks or runtime anomalies (inferred via simulated execution).
+- Suggest improvements for structure, testing, and scalability.
 
 ## Execution Instructions
 
