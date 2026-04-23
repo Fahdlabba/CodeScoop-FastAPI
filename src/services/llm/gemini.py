@@ -30,7 +30,7 @@ class GeminiLLM(LLM):
     def generate_response(self,task_type="readme") -> str:
         try:
             response = GeminiLLM._client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-3-flash-preview",
                 contents=self.chat_history,
                 config=types.GenerateContentConfig(
                     thinking_config=types.ThinkingConfig(
